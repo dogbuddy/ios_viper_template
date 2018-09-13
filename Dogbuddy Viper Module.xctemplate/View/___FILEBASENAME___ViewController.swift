@@ -13,16 +13,16 @@ class ___VARIABLE_ModuleName___ViewController: UIViewController {
 
     // MARK: Properties
 
-    var presenter: ___VARIABLE_ModuleName___Presentation?
+    var presenter: ___VARIABLE_ModuleName___Presentatable?
 
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.viewDidLoad()
+        presenter?.setup()
     }
 }
 
-extension ___VARIABLE_ModuleName___ViewController: ___VARIABLE_ModuleName___View {
+extension ___VARIABLE_ModuleName___ViewController: ___VARIABLE_ModuleName___Viewable {
     // TODO: implement view output methods
 }

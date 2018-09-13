@@ -8,27 +8,35 @@
 
 import Foundation
 
-protocol ___VARIABLE_ModuleName___View: class {
+protocol ___VARIABLE_ModuleName___Viewable: class {
+    var presenter: ___VARIABLE_ModuleName___Presentatable? { get set }
+    
     // TODO: Declare view methods
 }
 
-protocol ___VARIABLE_ModuleName___Presentation: class {
+protocol ___VARIABLE_ModuleName___Presentatable: class {
     func viewDidLoad()
-    // TODO: Declare presentation methods
+    var view: ___VARIABLE_ModuleName___Viewable? { get set }
+    var router: ___VARIABLE_ModuleName___Routable? { get set }
+    var interactor: ___VARIABLE_ModuleName___Interactable? { get set }
+    var callbacks: ___VARIABLE_ModuleName___Callbacks? { get set }
+    
+    func setup()
+    
+    // TODO: Declare presenter methods
 }
 
-protocol ___VARIABLE_ModuleName___UseCase: class {
-    // TODO: Declare use case methods
+protocol ___VARIABLE_ModuleName___Interactable: class {
+    var output: ___VARIABLE_ModuleName___Output? { get set }
+    var config: ___VARIABLE_ModuleName___Config? { get set }
+    
+    // TODO: Declare interactor methods
 }
 
-protocol ___VARIABLE_ModuleName___InteractorOutput: class {
+protocol ___VARIABLE_ModuleName___Output: class {
     // TODO: Declare interactor output methods
 }
 
-protocol ___VARIABLE_ModuleName___Wireframe: class {
-    // TODO: Declare wireframe methods
-}
-
-protocol ___VARIABLE_ModuleName___Delegate: class {
-    // TODO: Declare outside methods
+protocol ___VARIABLE_ModuleName___Routable: class {
+    // TODO: Declare router methods
 }

@@ -13,7 +13,7 @@ class ___VARIABLE_ModuleName___ViewController: UIViewController {
 
     // MARK: Properties
 
-    var presenter: ___VARIABLE_ModuleName___Presentatable?
+    var presenter: ___VARIABLE_ModuleName___Presentable?
 
     // MARK: Lifecycle
 

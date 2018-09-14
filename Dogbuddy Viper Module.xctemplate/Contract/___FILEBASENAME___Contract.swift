@@ -9,13 +9,12 @@
 import Foundation
 
 protocol ___VARIABLE_ModuleName___Viewable: class {
-    var presenter: ___VARIABLE_ModuleName___Presentatable? { get set }
+    var presenter: ___VARIABLE_ModuleName___Presentable? { get set }
     
     // TODO: Declare view methods
 }
 
-protocol ___VARIABLE_ModuleName___Presentatable: class {
-    func viewDidLoad()
+protocol ___VARIABLE_ModuleName___Presentable: class {
     var view: ___VARIABLE_ModuleName___Viewable? { get set }
     var router: ___VARIABLE_ModuleName___Routable? { get set }
     var interactor: ___VARIABLE_ModuleName___Interactable? { get set }
@@ -38,5 +37,7 @@ protocol ___VARIABLE_ModuleName___Output: class {
 }
 
 protocol ___VARIABLE_ModuleName___Routable: class {
+    
+    var view: ___VARIABLE_ModuleName___Viewable? { get set }
     // TODO: Declare router methods
 }

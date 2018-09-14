@@ -19,8 +19,7 @@ class ___VARIABLE_ModuleName___Router {
 
 
     // MARK: Properties
-
-    weak var view: UIViewController?
+    weak var view: ___VARIABLE_ModuleName___Viewable?
 
     // MARK: Static methods
 
@@ -30,7 +29,7 @@ class ___VARIABLE_ModuleName___Router {
         let presenter =  presenterMock ?? ___VARIABLE_ModuleName___Presenter()
         let router = routerMock ?? ___VARIABLE_ModuleName___Router()
         let interactor = interactorMock ?? ___VARIABLE_ModuleName___Interactor()
-        let output = outputMock ?? presenter as! ___VARIABLE_ModuleName___Output()
+        let output = outputMock ?? presenter as! ___VARIABLE_ModuleName___Output
         
         view.presenter =  presenter
         
@@ -48,6 +47,6 @@ class ___VARIABLE_ModuleName___Router {
     }
 }
 
-extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___Routable? {
+extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___Routable {
     // TODO: Implement wireframe methods
 }

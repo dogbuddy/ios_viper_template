@@ -15,11 +15,12 @@ class ___VARIABLE_ModuleName___Presenter {
     weak var view: ___VARIABLE_ModuleName___Viewable?
     var router: ___VARIABLE_ModuleName___Routable?
     var interactor: ___VARIABLE_ModuleName___Interactable?
-    var delegate: ___VARIABLE_ModuleName___Callbacks?
+    var callbacks: ___VARIABLE_ModuleName___Callbacks?
 }
 
-extension ___VARIABLE_ModuleName___Presenter: ___VARIABLE_ModuleName___Presentatable {
-    func viewDidLoad() {
+extension ___VARIABLE_ModuleName___Presenter: ___VARIABLE_ModuleName___Presentable {
+    
+    func setup() {
         // TODO: implement when the view did notify it load
     }
     // TODO: implement presentation methods

@@ -10,34 +10,43 @@ import Foundation
 import UIKit
 
 class ___VARIABLE_ModuleName___Router {
+    
+    static var viewMock:  ___VARIABLE_ModuleName___Viewable?
+    static var presenterMock:  ___VARIABLE_ModuleName___Presentable?
+    static var routerMock:  ___VARIABLE_ModuleName___Routable?
+    static var interactorMock:  ___VARIABLE_ModuleName___Interactable?
+    static var outputMock:  ___VARIABLE_ModuleName___Output?
+
 
     // MARK: Properties
-
-    weak var view: UIViewController?
+    weak var view: ___VARIABLE_ModuleName___Viewable?
 
     // MARK: Static methods
 
-    static func setupModule(delegate: ___VARIABLE_ModuleName___Delegate? = nil) -> ___VARIABLE_ModuleName___ViewController {
-        let viewController = ___VARIABLE_ModuleName___ViewController()
-        let presenter = ___VARIABLE_ModuleName___Presenter()
-        let router = ___VARIABLE_ModuleName___Router()
-        let interactor = ___VARIABLE_ModuleName___Interactor()
-
-        viewController.presenter =  presenter
-
-        presenter.view = viewController
+    static func make(config: ___VARIABLE_ModuleName___Config, callbacks: ___VARIABLE_ModuleName___Callbacks) -> ___VARIABLE_ModuleName___ViewController {
+        
+        let view: ___VARIABLE_ModuleName___Viewable = viewMock ?? ___VARIABLE_ModuleName___ViewController()
+        let presenter =  presenterMock ?? ___VARIABLE_ModuleName___Presenter()
+        let router = routerMock ?? ___VARIABLE_ModuleName___Router()
+        let interactor = interactorMock ?? ___VARIABLE_ModuleName___Interactor()
+        let output = outputMock ?? presenter as! ___VARIABLE_ModuleName___Output
+        
+        view.presenter =  presenter
+        
+        presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
-        presenter.delegate = delegate
-
-        router.view = viewController
-
-        interactor.output = presenter
-
-        return viewController
+        presenter.callbacks = callbacks
+        
+        router.view = view
+        
+        interactor.output = output
+        interactor.config = config
+        
+        return view as! ___VARIABLE_ModuleName___ViewController
     }
 }
 
-extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___Wireframe {
+extension ___VARIABLE_ModuleName___Router: ___VARIABLE_ModuleName___Routable {
     // TODO: Implement wireframe methods
 }
